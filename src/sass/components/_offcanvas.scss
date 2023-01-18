@@ -1,0 +1,66 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+%offcanvas {
+
+    .btn-close {
+        display: none;
+    }
+
+    @include screenSize(medium) {
+        &.open {
+            display: block;
+            transform: translate(-255px, 0);
+
+            .background {
+                display: block;
+            }
+        }
+
+        .background {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            right: 100%;
+            display: none;
+            background-color: hsl(0, 0, 0, 0.5);
+        }
+
+        position: fixed;
+        top: 0;
+        left: 100%;
+        transform: translate(0, 0);
+        z-index: 100;
+        height: 100vh;
+        width: 255px;
+        background-color: $Off-white;
+
+        .btn-close {
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 27px 20px;
+            justify-content: end;
+
+            &_img {
+                width: 30px;
+            }
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 26px !important;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 23px;
+            margin-top: 145px;
+        }
+    }
+
+}

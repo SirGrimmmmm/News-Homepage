@@ -1,0 +1,37 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../components/offcanvas" as *;
+
+.navigation {
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        @include screenSize(medium) {
+            width: 45px;
+        }
+    }
+
+    &_nav {
+        transition: transform 1s ease;
+
+        ul {
+            display: flex;
+            gap: 40px;
+        }
+
+        @extend %offcanvas;
+
+    }
+
+    &_menu {
+        display: none;
+
+        @include screenSize(medium) {
+            display: block;
+        }
+    }
+}

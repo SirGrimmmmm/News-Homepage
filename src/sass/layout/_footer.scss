@@ -1,0 +1,43 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.footer {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-top: 70px;
+
+    @include screenSize(medium) {
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 65px;
+    }
+
+    .news-box:last-child {
+        max-width: 350px;
+    }
+
+    .news-box {
+        display: flex;
+        gap: 25px;
+        max-width: 330px;
+
+        @include screenSize(medium) {
+            max-width: 100% !important;
+        }
+
+        &_left img {
+            width: 100px;
+        }
+
+        &_right {
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+        }
+
+    }
+}

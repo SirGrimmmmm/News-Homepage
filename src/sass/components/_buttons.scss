@@ -1,0 +1,19 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+%button {
+    color: $Off-white;
+    padding: 16px 30px;
+    font-size: 14px;
+    letter-spacing: 4.2px;
+    font-weight: 400;
+    text-transform: uppercase;
+    background-color: $Soft-red;
+    cursor: pointer;
+    @include trans(all);
+
+    &:hover,
+    &:focus {
+        background-color: $Very-dark-blue;
+    }
+}

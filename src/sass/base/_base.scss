@@ -1,0 +1,64 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: 0;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    @include trans(all);
+}
+
+a:hover,
+a:focus {
+    color: $Soft-red !important;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 90px 50px;
+    background-color: $Off-white;
+
+    @include screenSize(small) {
+        padding: 30px 16px;
+
+        .attribution {
+            position: relative;
+            bottom: -30px;
+        }
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 1110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @include screenSize(medium) {
+        max-width: 700px;
+    }
+
+    @include screenSize(small) {
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,123 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../components/buttons" as *;
+
+.main-content {
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    margin-top: 55px;
+
+    @include screenSize(medium) {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 55px;
+        margin-top: 31px;
+    }
+
+    .left-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+
+        @include screenSize(medium) {
+            gap: 18px;
+        }
+
+        .hero-img {
+            max-width: 730px;
+        }
+
+        .hero-img-desktop {
+            @include screenSize(medium) {
+                display: none;
+            }
+        }
+
+        .hero-img-mobile {
+            display: none;
+
+            @include screenSize(medium) {
+                display: block;
+            }
+        }
+    }
+
+    .sub-bottom-news {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        flex-wrap: nowrap;
+        gap: 80px;
+
+        @include screenSize(large) {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        &_title {
+            min-width: 300px;
+        }
+
+        &_contents {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+
+            button {
+                @extend %button;
+            }
+
+            @include screenSize(small) {
+                gap: 30px;
+            }
+        }
+    }
+
+    .right-section {
+        flex: 0 0 350px;
+        max-width: 350px;
+        padding: 24px 25px;
+        background-color: $Very-dark-blue;
+        display: flex;
+        flex-direction: column;
+
+        @include screenSize(large) {
+            min-width: 350px;
+            max-width: 700px;
+        }
+
+        @include screenSize(small) {
+            padding: 18px 22px;
+            min-width: 290px;
+        }
+
+        .title {
+            margin-bottom: 20px;
+        }
+
+        &_container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contents-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10px 0;
+            gap: 31px;
+        }
+
+        hr {
+            height: 1px;
+            background-color: $Dark-grayish-blue;
+        }
+    }
+}

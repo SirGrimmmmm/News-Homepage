@@ -1,0 +1,112 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/**
+ * Default font family, size and color
+ */
+body {
+    color: $Very-dark-blue;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+}
+
+.navigation {
+    &_nav {
+        a {
+            color: $Dark-grayish-blue;
+            font-weight: 600;
+        }
+
+        @include screenSize(medium) {
+            font-size: 18px;
+            font-weight: 400;
+        }
+    }
+
+}
+
+.main-content {
+
+    .sub-bottom-news {
+
+        &_title {
+            font-size: 56px;
+            font-weight: 1000;
+            line-height: 57px;
+            // letter-spacing: 1px;
+
+            @include screenSize(large) {
+                font-size: 40px;
+                line-height: 43px;
+            }
+
+            @include screenSize(medium) {
+                letter-spacing: 0;
+            }
+        }
+
+        &_contents {
+            p {
+                color: $Dark-grayish-blue;
+                line-height: 24px;
+
+                @include screenSize(small) {
+                    line-height: 26px;
+                }
+            }
+        }
+    }
+
+    .right-section {
+        .title {
+            font-size: 40px;
+            font-weight: 700;
+            color: $Soft-orange;
+
+            @include screenSize(small) {
+                font-size: 32px;
+            }
+        }
+
+        .content_title-link {
+            font-size: 20px;
+            font-weight: 900;
+            color: $custom-title-color;
+        }
+
+        .content_para {
+            font-size: 15px;
+            font-weight: 400;
+            margin-top: 10px;
+            line-height: 25px;
+            color: $custom-text-color;
+        }
+    }
+}
+
+.footer {
+    .news-box {
+        &_number {
+            font-size: 30px;
+            font-weight: 700;
+            color: $Grayish-blue;
+        }
+
+        &_title {
+            font-size: 18px;
+            font-weight: 700;
+            white-space: nowrap;
+
+            @include screenSize(large) {
+                white-space: initial;
+            }
+        }
+
+        &_para {
+            line-height: 25px;
+            color: $Dark-grayish-blue;
+        }
+    }
+}
